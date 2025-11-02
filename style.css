@@ -11,7 +11,7 @@ body{
    color: white;
 }
 .container{
-    height: 1000vh;
+    height: 100vh;
     display: grid;
     grid-template-rows: 1fr 90vh;
     grid-template-columns: 240px 1fr;;
@@ -44,7 +44,7 @@ body{
     top: 15px;
     right: 15px;
 }
-.menu li:hover{
+.nav-links li:hover{
     color: green;
     opacity: 1;
 }
@@ -108,77 +108,6 @@ body{
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
-}
-.player{
-   grid-column: 1 / span 2;
-  grid-row: 2;
-  background-color: #181818;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 25px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 100; 
-}
-.song-info{
-    display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 25%;
-}
-.song-info img{
-    width: 60px;
-    border-radius: 5px;
-}
-.song-info p{
-    margin: 0;
-}
-.song-title{
-    font-weight: 600;
-    margin-bottom: 14px;
-}
-.artist{
-    color: gray;
-    font-size: 12px;
-    opacity: 0.8;
-}
-.player-center{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-}
-.controls{
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 8px;
-    justify-content: center;
-}
-.controls img{
-    display: flex;
-    align-items: center;
-    width: 30%;
-    justify-content: center;
-    gap: 20px;
-}
-.controls img:hover{
-    transform : scale(1.1);
-}
-.volume{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 20%;
-    justify-content: flex-end;
-}
-.volume input{
-    width: 100px;
 }
 @media (max-width: 768px){
     .container{
@@ -415,5 +344,140 @@ body{
   gap: 15px;
   color: white;
   font-size: 14px;
+}
+.top-nav{
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 0;
+    height: 60px;
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 100;
+}
+.top-nav input{
+    width: 60%;
+    background: #2a2a2a;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: white;
+}
+.top-nav .profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.top-nav .profile img{
+    width: 35px;
+    border-radius: 50%; 
+}
+.right-sidebar{
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    width: 260px;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    bottom: 90px;
+    overflow-y: auto;
+}
+.right-sidebar h3{
+    margin-bottom: 10px;
+}
+.right-sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+.right-sidebar li{
+    padding: 8px 0;
+    opacity: 0.8;
+}
+.right-sidebar li:hover{
+    color: #1db954;
+    opacity: 1;
+}
+.glassy{
+    background: rgba(24,24,24,0.7);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.light-mode{
+    background-color: #f5f5f5;
+    color: black;
+}
+body.neon-mode{
+    background: linear-gradient(45deg,#ff0080,#7928ca);
+}
+body.galaxy-mode{
+    background: radial-gradient(circle at top,#0f2027,#203a43,#2c5364);
+}
+@media(max-width: 992px){
+    .right-sidebar{display: none;}
+    .top-nav{left: 0;}
+}
+.theme-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+.theme-btn:hover{
+    background-color: #17a44a;
+    transform: scale(1.1);
+}
+.dark-theme{
+    background-color: #121212;
+    color: white;
+}
+.dark-theme .top-nav input{
+    background-color: #1e1e1e;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: #1db954;
+}
+.control-icon, .nav-links i {
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.control-icon:hover {
+  color: #1db954; /* Spotify green on hover */
+}
+/* 🎵 Rhythmix Logo Glow Animation */
+.logo img {
+  width: 40px;
+  filter: invert(1) drop-shadow(0 0 10px white);
+  animation: pulseGlow 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    filter: invert(1) drop-shadow(0 0 5px white);
+  }
+  100% {
+    filter: invert(1) drop-shadow(0 0 20px white);
+  }
 }
 
